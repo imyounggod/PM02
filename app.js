@@ -9,6 +9,7 @@ app.set("view engine", "hbs");
 
 //Парсер для данных
 const urlencodedParser = bodyParser.urlencoded({extended: false});
+<<<<<<< HEAD
 
 
 const mysql = require('mysql2');
@@ -20,6 +21,7 @@ const connection = mysql.createConnection({
   password: "FZ8H%LDg",
   port: "3306"
 });
+=======
 
 // тестирование подключения
 
