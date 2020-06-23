@@ -1,7 +1,7 @@
 {
   "name": "avia-app",
-  "version": "0.0.1",
-  "author": "Galyamin Danila",
+  "version": "0.1.0",
+  "author": "MP 2GROUP",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
