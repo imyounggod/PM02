@@ -2,9 +2,10 @@
   "name": "avia-app",
   "version": "0.1.0",
   "author": "MP 2GROUP",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -13,6 +14,7 @@
     "mysql2": "^2.1.0"
   },
   "devDependencies": {
-    "mocha": "^8.0.1"
+    "mocha": "^8.0.1",
+    "nodemon": "^2.0.4"
   }
 }
