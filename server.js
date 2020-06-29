@@ -21,6 +21,6 @@ const connection = require('./database/db');
 //Обработчики маршрутов
 const routes = require('./routes/routes')(app,connection);
 //Прослушивание сервера
-app.listen(8000,()=>{
+app.listen(process.env.PORT || 8000,()=>{
   console.log("Сервер запущен");
 });
