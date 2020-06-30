@@ -2,6 +2,9 @@ const moment = require('moment');
 module.exports = function(app,db){
   app.get("/", function(req,res){
     console.log("Переход на \"/\"")
+    if(req.query.where && req.query.date_out){
+      res.redirect(`/table?where=${req.query.where}&date_out=${req.query.date_out}`);
+    }
     res.render("index.hbs"), {
     }
   });
@@ -34,6 +37,13 @@ module.exports = function(app,db){
         
       });
   });
+
+  app.post("/search", function (req, res) {
+         
+    if(!req.body) return res.sendStatus(400);
+    res.send(`req.body.fio=${req.body.fio}\nreq.body.flight=${req.body.flight}`)
+  });
+  
   app.get("/table", function(req,res){
     let where = req.query.where;
     let date_out = new Date(req.query.date_out);

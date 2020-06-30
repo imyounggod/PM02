@@ -49,16 +49,21 @@
 							</div>
 
 							<div class="search_panel active">
-								<form action="#" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+								<form method="POST" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 									<div class="search_item">
 										<div>ФИО*</div>
-										<input type="text" class="destination search_input" placeholder="Иванов Иван Иванович" required="required">
+										<input name="fio" type="text" class="destination search_input" placeholder="Иванов Иван Иванович" required="required">
 									</div>
 									
 									
 										<div class="search_item">
 									<div>Рейс*</div>
-									<input type="text" class="check_out search_input" placeholder="">
+									<select name="flight" id="adults_1" class="dropdown_item_select search_input">
+										{{#each schedule}}
+										<option>{{this.id_flight}}</option>
+										
+										{{/each}}
+									</select>
 								</div>
 								<div class="search_item">
 									<div>Номер ряда*</div>
@@ -330,59 +335,9 @@
 		</div> 
 
 
-		<div class="container">
-			<div class="row">
-				
-
-				<div class="col-lg-12">
-					<!-- Сетка -->
-
-					<div class="offers_grid">
-
-						<!-- 1 рейс -->
-
-						{{#each schedule}}
-						<div class="offers_item rating_4">
-							<div class="row">
-								<div class="col-lg-1 temp_col"></div>
-								<div class="col-lg-3 col-1680-4">
-									<div class="offers_image_container">
-										<div class="offers_image_background" style="background-image:url(/images/single_plane.jpg)"></div>
-									<div class="offer_name"><a href="#">{{this.title_air}}</a></div>
-									</div>
-								</div>
-								<div class="col-lg-8">
-									<div class="offers_content">
-										<div class="offers_price">Рейс № {{this.id_flight}}</div>
-										
-										<p class="offers_text">{{this.title_out}}, {{this.country_out}}, {{this.city_out}} - 
-															   {{this.title_in}}, {{this.country_in}}, {{this.city_in}}</p>
-									
-										<p class="offers_text"> Интервал:  {{this.date_out}} - {{this.date_in}} </p> 
-											
-										<div class="offers_icons">
-											<ul class="offers_icons_list">
-
-												<li class="offers_icons_item"><img src="/images/compass.png" alt=""><p>{{this.time_in_road}}</p></li>
-												
-										</div> <!--
-										<div class="button book_button"><a href="#">Информация<span></span><span></span><span></span></a></div> -->
-										<div class="offer_reviews">
-											
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						{{/each}}
-
-						
-					</div>
-				</div>
-			</div>
-		</div>		
+			{{>flight}}
+		</div>
 	</div>
-
 
 	<footer class="footer">
 		<div class="container">
