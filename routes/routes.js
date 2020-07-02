@@ -1,5 +1,5 @@
 const moment = require('moment');
-
+//Все возможные маршруты маршруты 
 module.exports = function(app,db){
   let order = {};
   app.get("/", function(req,res){

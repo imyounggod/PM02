@@ -1,7 +1,9 @@
+// Подключение драйвера для работы с бд MySQL
 const mysql = require("mysql2");
+// Подключение файла с данными для подключения к бд
 const dbConfig = require("../config/db.config.js");
 
-// создаем соединение с нашей базой данных
+// Создаем соединение с нашей базой данных
 const connection = mysql.createPool({
     connectionLimit: 5,
     host: dbConfig.host,
@@ -12,11 +14,5 @@ const connection = mysql.createPool({
     dateStrings: dbConfig.dateStrings
 });
 
-// открываем  соединение с базой данных
-/*connection.connect(err => {
-if (err) throw error;
-console.log("успешно соединено с базой данных");
-});*/
-
+// Экспортируем  соединение
 module.exports = connection;
-//экспортируем  соединение
