@@ -1,5 +1,9 @@
 const moment = require('moment');
+<<<<<<< HEAD
+
+=======
 //Все возможные маршруты маршруты 
+>>>>>>> 1ddf254c92ca2e73d5f25eda055a850005f1d4dc
 module.exports = function(app,db){
   let order = {};
   app.get("/", function(req,res){
