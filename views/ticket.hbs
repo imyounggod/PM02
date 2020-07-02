@@ -29,7 +29,7 @@
 		</div>
 	</div>
 
-	<div class="offers">
+	<div class="offers" style="padding:0;">
 
 		<div class="search">
 			<div class="search_inner">
@@ -47,74 +47,79 @@
 									
 								</div>		
 							</div>
-
+							
 							<div class="search_panel active">
-								<form action="/ticket" method="POST" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
-									<div class="search_item">
-										<div>ФИО*</div>
-										<input name="fio" type="text" class="destination search_input" placeholder="Иванов Иван Иванович" required="required">
-									</div>
-									<div class="search_item">
-										<div>Дата*</div>
-										<input id="datefield" name="date" type="date" class="destination search_input" placeholder="" required="required">
-									</div>
-									
-									<div class="search_item">
-										<div>Рейс*</div>
-										<select name="flight" id="id_flight" class="dropdown_item_select search_input" size="1">
-											{{#each schedule}}
-											<option>{{this.id_flight}}</option>
-											
-											{{/each}}
-										</select>
-									</div>
-								<div class="search_item">
-									<div>Номер ряда*</div>
-									<input name="row" type="number" class="check_out search_input" placeholder="" min="1" maxlength="2" size="2">
-								</div>		
-                                <div class="search_item">
-									<div>Номер места*</div>
-									<input name="place" type="number" class="check_out search_input" placeholder="" min="1" maxlength="1" max="3" size="1">
-								</div>
-								
-								<div class="search_item" style="height: 79px;">
-									<div>Класс*</div>
-									<ul class="search_extras clearfix">
-											
-											<li class="search_extras_item">
-												<div class="clearfix" style="width:100px;">
-													<select name="class" id="class" class="dropdown_item_select search_input">
-														<option value="Эконом">Эконом</option>
-														<option value="Бизнес">Бизнес</option> 
-													</select>
-												</div>
-											</li>	
-											</ul>
-									</div>
-									
-									<div class="search_item">
-										<div>Серия и номер паспорта*</div>
-										<input name="passport" type="text" class="destination search_input" maxlength="10" placeholder="" required>
-									</div>
-									<div class="search_item">
-										<div>Номер карты*</div>
-										<input name="serial" type="number" class="destination search_input" maxlength="16" placeholder="0123 4567 8901 2345" required>
-									</div>
-									<div class="search_item">
-										<div>Владелец карты*</div>
-										<input name="owner" type="text" class="destination search_input" placeholder="IVANOV IVAN" required>
-									</div>
-									<div class="search_item">
-										<div>Срок действия*</div>
-										<input name="month" type="number" class="destination search_input" placeholder="MM" maxlength="2" min="1" required size="1" style="width:100px;">
-										<input name="year" type="number" class="destination search_input" placeholder="YY" maxlength="2" min="0" max="99" required size="1" style="width:100px;">
-									</div>
-									<div class="search_item">
-										<div>CCV*</div>
-										<input name="ccv" type="password" class="destination search_input" maxlength="3" placeholder="***" required>
-									</div>
+								<form action="/ticket/confirm" method="POST" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+									<table style="color:white">
+										<tr>
+											<td>
+												ФИО:
+											</td>
+											<td name="fio">
+												<input name="fio" type="text" value="{{data.fio}}" class="destination search_input" placeholder="Иванов Иван Иванович" required="required">
+												<input name="passport" type="text" value="{{data.passport}}"  hidden class="destination search_input" placeholder="Иванов Иван Иванович" required="required">
 
-									<button class="button search_button">Забронировать<span></span><span></span><span></span></button>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Дата вылета:
+											</td>
+											<td>
+												<input  id="datefield" name="date" type="date" value="{{data.date}}" class="destination search_input" placeholder="" required="required">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Номер рейса:
+											</td>
+											<td>
+												<input  name="flight" type="number" value="{{data.flight}}" class="destination search_input" placeholder="" required="required">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Ряд:
+											</td>
+											<td>
+												<input  name="row" type="number" value="{{data.row}}" class="destination search_input" placeholder="" required="required">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Место:
+											</td>
+											<td>
+												<input  name="place" type="number" value="{{data.place}}" class="destination search_input" placeholder="" required="required">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Класс:
+											</td>
+											<td>
+												<input name="class" type="text" value="{{data.class}}" class="destination search_input" placeholder="" required="required">
+											</td>
+										</tr>
+										</table>
+										<div class="extras">
+										<ul class="search_extras clearfix">
+											<div style="color:white">Багаж</div>
+											<li class="search_extras_item">
+												<div class="clearfix">
+													
+													<input name="bagg" type="checkbox" id="bagg" class="search_extras_cb">
+													<label for="bagg">Ручная кладь</label>
+											
+													<input name="bagg2" type="checkbox" id="bagg2" class="search_extras_cb">
+													<label for="bagg2">Большой багаж</label>
+												</div>
+											</li>
+						
+										</ul>
+									</div>
+									<button class="button search_button">Подтвердить<span></span><span></span><span></span></button>
+									<button class="button search_button"><a href="/search">Отменить</a><span></span><span></span><span></span></button>
 								</form>
 							</div>
 
@@ -300,8 +305,6 @@
 			</div>	
 		</div> 
 
-
-			{{>flight}}
 		</div>
 	</div>
 
@@ -387,21 +390,6 @@ Copyright МП 31/32-17 ПМ.02 @RProduction &copy;<script>document.write(new Da
 
 </div>
 
-<script>
-	var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
-var yyyy = today.getFullYear();
- if(dd<10){
-        dd='0'+dd
-    } 
-    if(mm<10){
-        mm='0'+mm
-    } 
-
-today = yyyy+'-'+mm+'-'+dd;
-document.getElementById("datefield").setAttribute("min", today);
-</script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>
 <script src="styles/bootstrap4/bootstrap.min.js"></script>

@@ -2,7 +2,7 @@ const mysql = require("mysql2");
 const dbConfig = require("../config/db.config.js");
 
 // создаем соединение с нашей базой данных
-const connection = mysql.createPool({
+const connection = mysql.createConnection({
     connectionLimit: 5,
     host: dbConfig.host,
     user: dbConfig.user,
@@ -11,12 +11,15 @@ const connection = mysql.createPool({
     port: dbConfig.port,
     dateStrings: dbConfig.dateStrings
 });
-
-// открываем  соединение с базой данных
-/*connection.connect(err => {
-if (err) throw error;
-console.log("успешно соединено с базой данных");
-});*/
+//Проверка соединения
+connection.connect(function(err){
+    if (err) {
+      return console.error("Ошибка: " + err.message);
+    }
+    else{
+      console.log("Подключение к серверу MySQL успешно установлено");
+    }
+ });
 
 module.exports = connection;
 //экспортируем  соединение
