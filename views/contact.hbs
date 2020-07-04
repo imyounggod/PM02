@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>W3 || Информация</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travelix Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/styles/bootstrap4/bootstrap.min.css">
+<link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/styles/contact_styles.css">
+<link rel="stylesheet" type="text/css" href="/styles/contact_responsive.css">
+</head>
+
+<body>
+
+<div class="super_container">
+	
+
+
+
+	{{> menu}}
+
+
+
+	
+
+
+
+	<div class="home">
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="/images/contact_background.jpg"></div>
+		<div class="home_content">
+			<div class="home_title">контактная информация</div>
+		</div>
+	</div>
+
+
+
+	<div class="contact_form_section">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+
+			
+					<div class="contact_form_container">
+						<div class="contact_title text-center">написать нам</div>
+						<form action="#" id="contact_form" class="contact_form text-center">
+							<input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="ФИО" required="required" data-error="Name is required.">
+							<input type="text" id="contact_form_email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
+							<input type="text" id="contact_form_subject" class="contact_form_subject input_field" placeholder="Причина сообщения" required="required" data-error="Subject is required.">
+							<textarea id="contact_form_message" class="text_field contact_form_message" name="message" rows="4" placeholder="Сообщение" required="required" data-error="Please, write us a message."></textarea>
+							<button type="submit" id="form_submit_button" class="form_submit_button button trans_200">Отправить<span></span><span></span><span></span></button>
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- About -->
+	<div class="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5">
+					
+				
+
+					<div class="about_image">
+						<img src="/images/man.png" alt="">
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					
+					<div class="about_content">
+						<div class="logo_container about_logo">
+							<div class="logo"><a href="/"><img src="/images/logo.png" alt=""></a></div>
+						</div>
+						<p class="about_text">United Airlines — крупнейшая частная авиакомпания России с самым современным парком воздушных судов на российском рынке авиаперевозок. Широкая маршрутная сеть позволяет нашим пассажирам путешествовать в 181 город в 26 странах мира.</p>
+					</div>
+
+				</div>
+
+				<div class="col-lg-3">
+					
+				
+
+					<div class="about_info">
+						<ul class="contact_info_list">
+							<li class="contact_info_item d-flex flex-row">
+								<div><div class="contact_info_icon"><img src="/images/placeholder.svg" alt=""></div></div>
+								<div class="contact_info_text">Шереметьево - аэропорт имени А.С. Пушкина</div>
+							</li>
+							<li class="contact_info_item d-flex flex-row">
+								<div><div class="contact_info_icon"><img src="/images/phone-call.svg" alt=""></div></div>
+								<div class="contact_info_text">+7 495-228-1488</div>
+							</li>
+							<li class="contact_info_item d-flex flex-row">
+								<div><div class="contact_info_icon"><img src="/images/message.svg" alt=""></div></div>
+								<div class="contact_info_text"><a href="" target="_top">w3@aero.ru</a></div>
+							</li>
+							<li class="contact_info_item d-flex flex-row">
+								<div><div class="contact_info_icon"><img src="/images/planet-earth.svg" alt=""></div></div>
+								<div class="contact_info_text"><a href="/">www.w3aero.ru</a></div>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/styles/bootstrap4/popper.js"></script>
+<script src="/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+<script src="/js/contact_custom.js"></script>
+
+</body>
+
+</html>

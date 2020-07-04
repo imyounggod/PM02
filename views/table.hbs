@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>W3.Aero || Расписание рейсов</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travelix Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/styles/bootstrap4/bootstrap.min.css">
+<link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/styles/offers_styles.css">
+<link rel="stylesheet" type="text/css" href="/styles/offers_responsive.css">
+</head>
+
+<body>
+
+<div class="super_container">
+	
+	
+
+	{{> menu}}
+
+
+	
+
+	<div class="home">
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="/images/about_background.jpg"></div>
+		<div class="home_content">
+			<div class="home_title">Расписание рейсов</div>
+		</div>
+	</div>
+
+	{{>search_flight}}
+
+	<div class="offers">
+
+		{{>flight}}
+		</div>		
+	</div>
+
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 order-lg-1 order-2  ">
+					<div class="copyright_content d-flex flex-row align-items-center">
+						<div>
+Copyright МП 31/32-17 ПМ.02 @RProduction &copy;<script>document.write(new Date().getFullYear());</script> 
+</div>
+					</div>
+				</div>
+				<div class="col-lg-9 order-lg-2 order-1">
+					<div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
+						<div class="footer_nav">
+							<ul class="footer_nav_list">
+								<li class="footer_nav_item"><a href="/search">Поиск</a></li>
+								<li class="footer_nav_item"><a href="/table">Рейсы</a></li>
+								<li class="footer_nav_item"><a href="/about">Информация</a></li>
+								<li class="footer_nav_item"><a href="/contact">Контакты</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+
+
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/styles/bootstrap4/popper.js"></script>
+<script src="/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="/plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="/plugins/easing/easing.js"></script>
+<script src="/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="/js/offers_custom.js"></script>
+
+</body>
+
+</html>

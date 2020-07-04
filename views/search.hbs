@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>W3.Aero || Покупка билетов</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travelix Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/styles/bootstrap4/bootstrap.min.css">
+<link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/styles/offers_styles.css">
+<link rel="stylesheet" type="text/css" href="/styles/offers_responsive.css">
+</head>
+
+<body>
+
+<div class="super_container">
+	
+	
+
+		{{>menu}}
+
+	
+
+	<div class="home">
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/about_background.jpg"></div>
+		<div class="home_content">
+			<div class="home_title">Покупка билетов</div>
+		</div>
+	</div>
+
+	<div class="offers">
+
+		<div class="search">
+			<div class="search_inner">
+				
+				<div class="container fill_height no-padding">
+					<div class="row fill_height no-margin">
+						<div class="col fill_height no-padding">
+
+							<div class="search_tabs_container">
+								<div class="search_tabs d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+									<div class="search_tab active d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/suitcase.png" alt=""><span>Оформление</span></div>
+									
+									
+								
+									
+								</div>		
+							</div>
+
+							<div class="search_panel active">
+								<form action="/ticket" method="POST" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+									<div class="search_item">
+										<div>ФИО*</div>
+										<input name="fio" type="text" class="destination search_input" placeholder="Иванов Иван Иванович" required="required">
+									</div>
+									<div class="search_item">
+										<div>Дата*</div>
+										<input id="datefield" name="date" type="date" class="destination search_input" placeholder="" required="required">
+									</div>
+									
+									<div class="search_item">
+										<div>Рейс*</div>
+										<select name="flight" id="id_flight" class="dropdown_item_select search_input" size="1">
+											{{#each schedule}}
+											<option>{{this.id_flight}}</option>
+											
+											{{/each}}
+										</select>
+									</div>
+								<div class="search_item">
+									<div>Номер ряда*</div>
+									<input name="row" type="number" class="check_out search_input" placeholder="" min="1" maxlength="2" size="2">
+								</div>		
+                                <div class="search_item">
+									<div>Номер места*</div>
+									<input name="place" type="number" class="check_out search_input" placeholder="" min="1" maxlength="1" max="3" size="1">
+								</div>
+								
+								<div class="search_item" style="height: 79px;">
+									<div>Класс*</div>
+									<ul class="search_extras clearfix">
+											
+											<li class="search_extras_item">
+												<div class="clearfix" style="width:100px;">
+													<select name="class" id="class" class="dropdown_item_select search_input">
+														<option value="Эконом">Эконом</option>
+														<option value="Бизнес">Бизнес</option> 
+													</select>
+												</div>
+											</li>	
+											</ul>
+									</div>
+									
+									<div class="search_item">
+										<div>Серия и номер паспорта*</div>
+										<input name="passport" type="text" class="destination search_input" maxlength="10" placeholder="" required>
+									</div>
+									<div class="search_item">
+										<div>Номер карты*</div>
+										<input name="serial" type="number" class="destination search_input" maxlength="16" placeholder="0123 4567 8901 2345" required>
+									</div>
+									<div class="search_item">
+										<div>Владелец карты*</div>
+										<input name="owner" type="text" class="destination search_input" placeholder="IVANOV IVAN" required>
+									</div>
+									<div class="search_item">
+										<div>Срок действия*</div>
+										<input name="month" type="number" class="destination search_input" placeholder="MM" maxlength="2" min="1" required size="1" style="width:100px;">
+										<input name="year" type="number" class="destination search_input" placeholder="YY" maxlength="2" min="0" max="99" required size="1" style="width:100px;">
+									</div>
+									<div class="search_item">
+										<div>CCV*</div>
+										<input name="ccv" type="password" class="destination search_input" maxlength="3" placeholder="***" required>
+									</div>
+
+									<button class="button search_button">Забронировать<span></span><span></span><span></span></button>
+								</form>
+							</div>
+
+
+							<div class="search_panel">
+								<form action="#" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+									<div class="search_item">
+										<div>destination</div>
+										<input type="text" class="destination search_input" required="required">
+									</div>
+									<div class="search_item">
+										<div>check in</div>
+										<input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+									</div>
+									<div class="search_item">
+										<div>check out</div>
+										<input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
+									</div>
+									<div class="search_item">
+										<div>adults</div>
+										<select name="adults" id="adults_2" class="dropdown_item_select search_input">
+											<option>01</option>
+											<option>02</option>
+											<option>03</option>
+										</select>
+									</div>
+									<div class="search_item">
+										<div>children</div>
+										<select name="children" id="children_2" class="dropdown_item_select search_input">
+											<option>0</option>
+											<option>02</option>
+											<option>03</option>
+										</select>
+									</div>
+									<button class="button search_button">search<span></span><span></span><span></span></button>
+								</form>
+							</div>
+
+
+							<div class="search_panel">
+								<form action="#" id="search_form_3" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+									<div class="search_item">
+										<div>destination</div>
+										<input type="text" class="destination search_input" required="required">
+									</div>
+									<div class="search_item">
+										<div>check in</div>
+										<input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+									</div>
+									<div class="search_item">
+										<div>check out</div>
+										<input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
+									</div>
+									<div class="search_item">
+										<div>adults</div>
+										<select name="adults" id="adults_3" class="dropdown_item_select search_input">
+											<option>01</option>
+											<option>02</option>
+											<option>03</option>
+										</select>
+									</div>
+									<div class="search_item">
+										<div>children</div>
+										<select name="children" id="children_3" class="dropdown_item_select search_input">
+											<option>0</option>
+											<option>02</option>
+											<option>03</option>
+										</select>
+									</div>
+									<button class="button search_button">search<span></span><span></span><span></span></button>
+								</form>
+							</div>
+
+		
+							<div class="search_panel">
+								<form action="#" id="search_form_4" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+									<div class="search_item">
+										<div>destination</div>
+										<input type="text" class="destination search_input" required="required">
+									</div>
+									<div class="search_item">
+										<div>check in</div>
+										<input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+									</div>
+									<div class="search_item">
+										<div>check out</div>
+										<input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
+									</div>
+									<div class="search_item">
+										<div>adults</div>
+										<select name="adults" id="adults_4" class="dropdown_item_select search_input">
+											<option>01</option>
+											<option>02</option>
+											<option>03</option>
+										</select>
+									</div>
+									<div class="search_item">
+										<div>children</div>
+										<select name="children" id="children_4" class="dropdown_item_select search_input">
+											<option>0</option>
+											<option>02</option>
+											<option>03</option>
+										</select>
+									</div>
+									<button class="button search_button">search<span></span><span></span><span></span></button>
+								</form>
+							</div>
+
+						
+
+							<div class="search_panel">
+								<form action="#" id="search_form_5" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+									<div class="search_item">
+										<div>destination</div>
+										<input type="text" class="destination search_input" required="required">
+									</div>
+									<div class="search_item">
+										<div>check in</div>
+										<input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+									</div>
+									<div class="search_item">
+										<div>check out</div>
+										<input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
+									</div>
+									<div class="search_item">
+										<div>adults</div>
+										<select name="adults" id="adults_5" class="dropdown_item_select search_input">
+											<option>01</option>
+											<option>02</option>
+											<option>03</option>
+										</select>
+									</div>
+									<div class="search_item">
+										<div>children</div>
+										<select name="children" id="children_5" class="dropdown_item_select search_input">
+											<option>0</option>
+											<option>02</option>
+											<option>03</option>
+										</select>
+									</div>
+									<button class="button search_button">search<span></span><span></span><span></span></button>
+								</form>
+							</div>
+
+						
+
+							<div class="search_panel">
+								<form action="#" id="search_form_6" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+									<div class="search_item">
+										<div>destination</div>
+										<input type="text" class="destination search_input" required="required">
+									</div>
+									<div class="search_item">
+										<div>check in</div>
+										<input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+									</div>
+									<div class="search_item">
+										<div>check out</div>
+										<input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
+									</div>
+									<div class="search_item">
+										<div>adults</div>
+										<select name="adults" id="adults_6" class="dropdown_item_select search_input">
+											<option>01</option>
+											<option>02</option>
+											<option>03</option>
+										</select>
+									</div>
+									<div class="search_item">
+										<div>children</div>
+										<select name="children" id="children_6" class="dropdown_item_select search_input">
+											<option>0</option>
+											<option>02</option>
+											<option>03</option>
+										</select>
+									</div>
+									<button class="button search_button">search<span></span><span></span><span></span></button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>	
+		</div> 
+
+
+			{{>flight}}
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+
+			
+				<div class="col-lg-3 footer_column">
+					<div class="footer_col">
+						<div class="footer_content footer_about">
+							<div class="logo_container footer_logo">
+								<div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+							</div>
+							<p class="footer_about_text">United Airlines — крупнейшая частная авиакомпания России с самым современным парком воздушных судов на российском рынке авиаперевозок.
+								Широкая маршрутная сеть позволяет нашим пассажирам путешествовать в 181 город в 26 странах мира.</p>
+							<ul class="footer_social_list">
+								
+								<li class="footer_social_item"><a href="https://www.facebook.com/United/"><i class="fa fa-facebook-f"></i></a></li>
+								<li class="footer_social_item"><a href="https://twitter.com/united"><i class="fa fa-twitter"></i></a></li>
+								<li class="footer_social_item"><a href="https://www.instagram.com/united/"><i class="fa fa-dribbble"></i></a></li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+
+						
+				<div class="col-lg-3 footer_column">
+					<div class="footer_col">
+						<div class="footer_title">Контактная Информация</div>
+						<div class="footer_content footer_contact">
+							<ul class="contact_info_list">
+								<li class="contact_info_item d-flex flex-row">
+									<div><div class="contact_info_icon"><img src="images/placeholder.svg" alt=""></div></div>
+									<div class="contact_info_text">Шереметьево - аэропорт имени А.С. Пушкина</div>
+								</li>
+								<li class="contact_info_item d-flex flex-row">
+									<div><div class="contact_info_icon"><img src="images/phone-call.svg" alt=""></div></div>
+									<div class="contact_info_text">+7 495-228-1488</div>
+								</li>
+								<li class="contact_info_item d-flex flex-row">
+									<div><div class="contact_info_icon"><img src="images/message.svg" alt=""></div></div>
+									<div class="contact_info_text"><a href="#" target="_top">w3@aero.ru</a></div>
+								</li>
+								<li class="contact_info_item d-flex flex-row">
+									<div><div class="contact_info_icon"><img src="images/planet-earth.svg" alt=""></div></div>
+									<div class="contact_info_text"><a href="#">www.w3aero.ru</a></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 order-lg-1 order-2  ">
+					<div class="copyright_content d-flex flex-row align-items-center">
+						<div>
+Copyright МП 31/32-17 ПМ.02 @RProduction &copy;<script>document.write(new Date().getFullYear());</script> 
+</div>
+					</div>
+				</div>
+				<div class="col-lg-9 order-lg-2 order-1">
+					<div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
+						<div class="footer_nav">
+							<ul class="footer_nav_list">
+								<li class="footer_nav_item"><a href="/search">Поиск</a></li>
+								<li class="footer_nav_item"><a href="/table">Рейсы</a></li>
+								<li class="footer_nav_item"><a href="/about">Информация</a></li>
+								<li class="footer_nav_item"><a href="/contact">Контакты</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script>
+	var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+ if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("datefield").setAttribute("min", today);
+</script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="js/offers_custom.js"></script>
+
+</body>
+
+</html>
