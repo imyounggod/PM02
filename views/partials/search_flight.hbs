@@ -18,20 +18,20 @@
 			
 
 					<div class="search_panel active">
-						<form method="GET" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+						<form id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 							<div class="search_item">
 								<div>Пункт назначения</div>
-								<input name="where" type="text" class="destination search_input" required="required">
+								<input name="where" id="where" type="text" class="destination search_input" required="required">
 							</div>
 							<div class="search_item">
 								<div>Когда</div>
-								<input name="date_out" type="date" class="check_in search_input" placeholder="" required>
+								<input name="date_out" id="date_out" type="date" class="check_in search_input" placeholder="" required>
 
 							</div>
 							
 							
 							
-							<button class="button search_button">Поиск<span></span><span></span><span></span></button>
+							<button class="button search_button" id="button-search">Поиск<span></span><span></span><span></span></button>
 						</form>
 					</div>
 
@@ -39,3 +39,6 @@
 			</div>
 		</div>		
 	</div>
+
+	
+	
